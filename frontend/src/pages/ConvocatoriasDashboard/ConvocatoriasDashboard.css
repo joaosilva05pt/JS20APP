@@ -1,0 +1,300 @@
+/* Grelha de cartões superiores */
+.dash-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.dash-stat-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dash-stat-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #8b9bb4;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dash-big-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.dash-sub-text {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* Gráfico de Barras Cronológico Fallback */
+.dash-linear-chart-fallback {
+  background-color: #0f1523;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  min-height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dash-chart-bars-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+}
+
+.dash-chart-bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 60px;
+}
+
+.dash-bar-fill-wrapper {
+  height: 140px;
+  width: 14px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dash-bar-fill {
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  transition: height 0.5s ease-in-out;
+}
+
+.dash-bar-label-pop {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dash-bar-date {
+  font-size: 0.75rem;
+  color: #8b9bb4;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.dash-bar-title {
+  font-size: 0.65rem;
+  color: #475569;
+  margin-top: 0.1rem;
+}
+
+/* Layout Individual 2 Colunas */
+.dash-individual-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .dash-individual-layout { grid-template-columns: 1fr; }
+}
+
+.dash-select-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #8b9bb4;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Linhas de Atributos */
+.dash-attributes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.dash-attr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dash-attr-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8b9bb4;
+  width: 90px;
+}
+
+.dash-progress-track {
+  flex: 1;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dash-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease-in-out;
+}
+
+.dash-attr-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 35px;
+  text-align: right;
+}
+
+.dash-profile-footer-score {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Grelha de Estatísticas de Competição */
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dash-stat-box {
+  background-color: #0f1523;
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.dash-stat-box span {
+  font-size: 0.75rem;
+  color: #8b9bb4;
+}
+
+.dash-stat-box strong {
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+/* Comparador de Jogadores */
+.dash-comparador-selectors {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dash-vs-badge {
+  background-color: #1e293b;
+  color: #3b82f6;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.dash-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.dash-comparison-table th {
+  padding: 1rem;
+  font-size: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.dash-comparison-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  font-size: 0.9rem;
+}
+
+.cell-meta {
+  color: #8b9bb4;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Barra de Filtros Temporais Estilo Gaming */
+.dash-filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem !important;
+  background-color: #0b111e;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.dash-filter-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #8b9bb4;
+  letter-spacing: 0.5px;
+  margin-right: 0.5rem;
+}
+
+.filter-chip {
+  background-color: #161f32;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-chip:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+.filter-chip.active {
+  background-color: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.dash-filter-divider {
+  color: #334155;
+  font-weight: 300;
+  margin: 0 0.5rem;
+}
+
+.dash-mini-dropdown {
+  background-color: #1e293b;
+  color: #fff;
+  border: 1px solid #334155;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}

@@ -1,0 +1,212 @@
+.nutricao-module-pane {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background-color: #0f1115;
+}
+
+.nutricao-full-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Formulário do Gabinete */
+.nutricao-creator-card {
+  padding: 1.5rem;
+  background-color: #111622;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+}
+
+.nutricao-creator-card h3 {
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.35rem;
+}
+
+.nutricao-subtitle {
+  color: #64748b;
+  font-size: 0.88rem;
+  margin: 0 0 1.25rem 0;
+}
+
+.nutricao-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nutricao-form-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nutricao-input, .nutricao-textarea {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  color: #fff;
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nutricao-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.nutricao-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.btn-save-nutrition {
+  background-color: #3b82f6; /* Azul oficial */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 🎛️ Abas de Filtros */
+.nutricao-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+.filter-tab-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.filter-tab-btn.active {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+/* 📋 Cards Exibição */
+.no-nutrition-card {
+  padding: 2.5rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.nutricao-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nutrition-display-card {
+  background-color: #111622;
+  border: 1px solid #1e293b;
+  border-left: 5px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.nutrition-display-card.type-pre-jogo { border-left-color: #ef4444; }
+.nutrition-display-card.type-suplementacao { border-left-color: #a855f7; }
+.nutrition-display-card.type-recuperacao { border-left-color: #22c55e; }
+
+.nutrition-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.nutrition-card-header h4 {
+  color: #fff;
+  margin: 0.25rem 0 0 0;
+  font-size: 1.15rem;
+}
+
+.nutrition-tag {
+  font-size: 0.65rem;
+  font-weight: bold;
+  background-color: #1e293b;
+  color: #94a3b8;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.action-header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-header-buttons button {
+  background: transparent;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+}
+.action-header-buttons button.del-btn:hover { color: #ef4444; }
+
+.nutrition-text-content {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.75rem 0;
+  word-break: break-word;
+}
+
+.nutrition-download-link {
+  display: inline-block;
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin: 0.5rem 0 0.75rem 0;
+}
+.nutrition-download-link:hover { text-decoration: underline; }
+
+.nutrition-card-footer {
+  display: flex;
+  gap: 0.5rem;
+  color: #475569;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  padding-top: 0.5rem;
+}
+
+/* Ajustes para o alerta de erro não partir o ecrã */
+.ge-error-alert {
+  padding: 0.85rem 1.25rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-radius: 6px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Forçar os botões de filtro a manterem margem limpa da listagem */
+.nutricao-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}

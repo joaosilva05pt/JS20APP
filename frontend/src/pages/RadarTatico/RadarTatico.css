@@ -1,0 +1,260 @@
+.radar-main-content {
+  flex: 1;
+  padding: 2.5rem;
+  color: #f1f5f9;
+  background-color: #0f172a;
+  overflow-y: auto;
+}
+
+.radar-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.radar-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+.radar-grid-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.radar-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* 📊 LAYOUT INTERNO INDESTRUTÍVEL COM SPLIT DE LISTA + GRÁFICO */
+.visual-split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .visual-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-list-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.split-chart-side {
+  background: #151f32;
+  border-radius: 10px;
+  padding: 1.2rem;
+  border: 1px solid #243249;
+}
+
+.split-chart-side h4 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 1.2rem;
+}
+
+.radar-scroll-list {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Linhas e Listas Internas */
+.titular-row, .profile-row, .mini-row-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #334155;
+}
+
+.mini-row-stats {
+  padding: 0.45rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.player-rank {
+  font-weight: 700;
+  color: #38bdf8;
+  width: 30px;
+}
+
+.player-name {
+  font-weight: 500;
+  color: #f1f5f9;
+}
+
+.stat-badge-index {
+  background: #0f172a;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-left: 0.8rem;
+  color: #34d399;
+}
+
+/* Perfil & Competitivo */
+.badge-profile {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.badge-profile.jogador-de-domingo { background: #064e3b; color: #6ee7b7; }
+.badge-profile.leão-de-treino { background: #78350f; color: #fde047; }
+.badge-profile.equilibrado { background: #334155; color: #cbd5e1; }
+
+.badge-regularity {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.badge-regularity.regular { background: #1e3a8a; color: #93c5fd; }
+.badge-regularity.volatile { background: #7f1d1d; color: #fca5a5; }
+
+/* Grid de Raio-X */
+.attributes-radar-flex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.attr-box {
+  background: #0f172a;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #243249;
+  transition: border-color 0.2s ease;
+}
+
+.attr-label {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-bottom: 0.2rem;
+}
+
+.attr-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #818cf8;
+}
+
+.no-data-text {
+  color: #64748b;
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+.card-calculation-formula {
+  font-size: 0.78rem;
+  background-color: #0f172a;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.card-calculation-formula strong {
+  color: #38bdf8;
+}
+
+.card-calculation-formula-setorial {
+  font-size: 0.75rem;
+  background-color: #0f172a;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border-left: 3px solid #6366f1;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.card-calculation-formula-setorial strong {
+  color: #818cf8;
+}
+
+.card-calculation-box {
+  font-size: 0.76rem;
+  background-color: #0f172a;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  color: #94a3b8;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+}
+
+.card-calculation-box.blue-border { border-left: 3px solid #3b82f6; }
+.card-calculation-box.yellow-border { border-left: 3px solid #eab308; }
+.card-calculation-box.purple-border { border-left: 3px solid #818cf8; }
+.card-calculation-box.red-border { border-left: 3px solid #ef4444; }
+
+.card-calculation-box strong {
+  color: #f1f5f9;
+}
+
+/* 📥 BOTÃO EXPORTAR PDF */
+.btn-exportar-pdf {
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+}
+
+.btn-exportar-pdf:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+.btn-exportar-pdf:disabled {
+  background-color: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ⏱️ ESTILOS DOS COMPONENTES CALENDÁRIO (Filtros de Data) */
+.radar-date-filters input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Torna o ícone do calendário branco para combinar com o tema escuro */
+  cursor: pointer;
+}
+
+.radar-date-filters input[type="date"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.radar-date-filters button:hover {
+  background-color: #dc2626 !important;
+}

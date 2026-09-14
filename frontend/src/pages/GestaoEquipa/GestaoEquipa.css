@@ -1,0 +1,269 @@
+/* FORÇAR O BALNEÁRIO A TAPAR O MENU E NAVBAR PRINCIPAIS DA APP */
+.ge-fullscreen-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background-color: #0D1321; /* Cor escura original do teu Dashboard */
+}
+
+.ge-workspace {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #0D1321;
+}
+
+/* SIDEBAR DA EQUIPA */
+.ge-sidebar {
+  width: 280px;
+  background-color: #111827;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto; /* Mantém o scroll preventivo para ecrãs pequenos/telemóvel */
+  flex-shrink: 0;
+}
+
+.ge-sidebar-brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.ge-sidebar-section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8b9bb4; /* Tom claro original para legibilidade */
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+/* LINKS DO MENU DA SIDEBAR */
+.ge-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.nav-item-btn {
+  background: transparent;
+  border: none;
+  color: #fff; /* Texto das opções sempre branco */
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-item-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+.nav-item-btn.active {
+  background-color: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-item-btn.pri.active { 
+  background-color: #2563eb; 
+  color: #fff;
+}
+
+/* Card Gold: Garante que o texto se mantém legível */
+.nav-item-btn.gold.active { 
+  background-color: #eab308; 
+  color: #fff; 
+  font-weight: 600; 
+}
+
+/* Identificação visual para botões de admin na sidebar */
+.nav-item-btn.admin-btn {
+  color: #ff8e8e;
+}
+.nav-item-btn.admin-btn.active {
+  background-color: #ff5757;
+  color: #fff;
+}
+
+.sidebar-exit-btn {
+  margin-top: auto; /* Força o botão a ir para a base da sidebar */
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.sidebar-exit-btn:hover { background-color: #ef4444; color: #fff; }
+
+/* PAINEL CENTRAL DE CONTEÚDO */
+.ge-content-pane {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+  background-color: #0D1321;
+}
+
+.ge-header h2 { margin: 0 0 0.5rem 0; font-size: 1.7rem; font-weight: 700; color: #fff; }
+.ge-header p { margin: 0 0 2rem 0; color: #8b9bb4; font-size: 0.95rem; }
+
+/* LAYOUT GERAL ADAPTADO - SUCEDENDO O ANTIGO RÁCIO ASSIMÉTRICO */
+.ge-main-layout { 
+  display: block; 
+}
+
+/* GRELHA EXPANDIDA EM FULL WIDTH */
+.ge-cards-grid.full-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: 1.5rem; 
+  width: 100%;
+}
+
+/* ESTILOS ANTIGOS DO GRID DA APP (FALLBACK) */
+.ge-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+
+/* CARDS PADRÃO DO BALNEÁRIO */
+.ge-hub-card { background-color: #172033; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; cursor: pointer; transition: all 0.2s; color: #fff; }
+.ge-hub-card:hover { transform: translateY(-3px); border-color: #3b82f6; box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.15); }
+.ge-hub-card h4 { margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 600; color: #fff; }
+.ge-hub-card p { margin: 0 0 1.25rem 0; color: #8b9bb4; font-size: 0.85rem; line-height: 1.4; flex: 1; }
+.card-link-block { font-size: 0.85rem; font-weight: 600; color: #3b82f6; }
+.high-priority { border-color: rgba(59, 130, 246, 0.3); background: linear-gradient(145deg, #172033 0%, #1e2942 100%); }
+.gold-border { border-color: rgba(234, 179, 8, 0.3); }
+.gold-border .card-link-block { color: #eab308; }
+
+/* CARDS EXCLUSIVOS DE DIREÇÃO NA GRELHA CENTRAL */
+.ge-admin-card-block {
+  border: 1px solid rgba(255, 87, 87, 0.2) !important;
+  background: linear-gradient(145deg, #172033 0%, #22181e 100%) !important;
+}
+.ge-admin-card-block:hover {
+  border-color: #ff5757 !important;
+  box-shadow: 0 8px 20px -5px rgba(255, 87, 87, 0.15) !important;
+}
+
+.admin-badge {
+  background-color: rgba(255, 87, 87, 0.15) !important;
+  color: #ff5757 !important;
+}
+
+.text-red {
+  color: #ff5757 !important;
+}
+
+/* COMPONENTES DE GERENCIAMENTO INTERNO */
+.legacy-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.internal-admin-card {
+  max-width: 500px;
+  background-color: #172033;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.world-header-title {
+  margin-bottom: 1rem;
+}
+.world-header-title h2 { margin: 0 0 0.4rem 0; font-size: 1.6rem; color: #fff; }
+.world-header-title p { margin: 0; color: #8b9bb4; font-size: 0.95rem; }
+
+/* REGRAS DE LEGACY LAYOUTS E CARDS DO FORMULÁRIO */
+.ge-card { background-color: #172033; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; color: #fff; }
+.admin-card { border-left: 4px solid #ff5757; position: relative; }
+.card-badge { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; font-weight: 700; background-color: rgba(255, 87, 87, 0.1); color: #ff5757; padding: 0.2rem 0.4rem; border-radius: 4px; }
+.ge-card-desc { font-size: 0.8rem; color: #8b9bb4; margin: 0.25rem 0 1.25rem 0; }
+
+/* FORMULÁRIO */
+.ge-form { display: flex; flex-direction: column; gap: 1rem; }
+.ge-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.ge-group label { font-size: 0.75rem; text-transform: uppercase; color: #8b9bb4; font-weight: 600; }
+.ge-form input, .ge-form select { background-color: #0f1523; border: 1px solid rgba(255, 255, 255, 0.08); color: #fff; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; }
+.ge-btn { background-color: #ff5757; color: #fff; border: none; padding: 0.85rem; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 0.5rem; transition: background 0.2s; }
+.ge-btn:hover { background-color: #e04848; }
+.ge-alert { padding: 0.75rem; border-radius: 6px; text-align: center; font-size: 0.85rem; }
+.ge-success { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); color: #4ade80; }
+.ge-error { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #f87171; }
+.ge-loading { background-color: #0D1321; color: #fff; height: 100vh; display: flex; justify-content: center; align-items: center; font-size: 1rem; }
+
+/* SUB-MUNDOS */
+.world-container { background-color: #172033; padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); min-height: 350px; color: #fff; }
+.world-container h2 { margin: 0 0 1rem 0; font-size: 1.5rem; color: #fff; }
+.world-container p { margin: 0; color: #8b9bb4; font-size: 0.95rem; }
+.ge-back-to-hub-btn { margin-top: 1.5rem; background: transparent; border: 1px solid #3b82f6; color: #3b82f6; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+.ge-back-to-hub-btn:hover { background: #3b82f6; color: #fff; }
+
+/* LINK DO LOGO NO TOPO DA SIDEBAR */
+.ge-sidebar-brand-link {
+  text-decoration: none;
+  display: block;
+}
+.ge-sidebar-brand-link:hover .ge-sidebar-brand {
+  opacity: 0.85;
+}
+
+/* LINKS DO MENU LATERAL (SUBSTITUINDO OS ANTIGOS BOTÕES) */
+.nav-item-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #fff;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.nav-item-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+.nav-item-link.admin-btn { color: #ff8e8e; }
+
+/* ENVOLVENTE DOS CARDS PARA NÃO QUEBRAR O LAYOUT COM O LINK */
+.card-redirect-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+/* DESIGN DO SPLIT NO CABEÇALHO (Seniores M | Nome Clube) */
+.header-divider {
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0 0.5rem;
+  font-weight: 300;
+}
+.header-club-name {
+  color: #8b9bb4;
+  font-weight: 500;
+}

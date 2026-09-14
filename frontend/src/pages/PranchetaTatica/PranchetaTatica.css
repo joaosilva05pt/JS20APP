@@ -1,0 +1,290 @@
+/* Container Principal Compacto e Sem Pixel Fixo */
+.tactical-module-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  width: 100%;
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .tactical-module-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow-y: auto;
+  }
+}
+
+/* Área da Prancheta (Esquerda) */
+.tactical-board-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.board-header {
+  padding: 0.75rem 1rem !important;
+  flex-shrink: 0;
+}
+
+.board-inputs-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.board-title-input {
+  flex: 1;
+  min-width: 180px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.board-mini-select {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.board-toolbox {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.5rem;
+}
+
+.tool-btn {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.btn-atq { background: #2563eb; color: white; }
+.btn-def { background: #dc2626; color: white; }
+.btn-ball { background: #ffffff; color: #1e293b; }
+
+/* Botões de Ação do Topo */
+.board-actions-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-delete-tactical {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-delete-tactical:hover {
+  background: #b91c1c;
+}
+
+/* 🏟️ RELVADO TÁTICO PROFISSIONAL (Proporção Exata FIFA 105m x 68m) */
+.tactical-pitch {
+  position: relative;
+  width: 100%; /* Toma a largura total da coluna sem deixar faixas pretas vazias nas pontas */
+  flex: 1;
+  max-height: 58vh; 
+  aspect-ratio: 105 / 68; /* Proporção matemática real */
+  margin: 0 auto;
+  background-color: #1e3a1e; 
+  background-image: repeating-linear-gradient(90deg, #1e3a1e, #1e3a1e 8%, #162e16 8%, #162e16 16%); 
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+/* Linhas e Marcações Oficiais do Campo */
+.pitch-lines-midfield {
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 2px; background: rgba(255, 255, 255, 0.8);
+}
+
+.pitch-lines-circle {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 18%; /* Proporcional ao tamanho total */
+  aspect-ratio: 1;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pitch-center-spot {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 6px; height: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Áreas de Jogo Esquerda (Home) */
+.pitch-large-area-home {
+  position: absolute;
+  top: 20%; left: 0;
+  width: 15.7%; height: 60%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: none;
+}
+.pitch-small-area-home {
+  position: absolute;
+  top: 36.8%; left: 0;
+  width: 5.2%; height: 26.4%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: none;
+}
+.pitch-penalty-spot-home {
+  position: absolute;
+  top: 50%; left: 10.5%;
+  width: 5px; height: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.pitch-d-arc-home {
+  position: absolute;
+  top: 38.5%; left: 9.5%;
+  width: 12%; height: 23%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  clip-path: inset(0 0 0 53%); /* Desenha apenas a meia-lua exterior */
+}
+
+/* Áreas de Jogo Direita (Away) */
+.pitch-large-area-away {
+  position: absolute;
+  top: 20%; right: 0;
+  width: 15.7%; height: 60%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-right: none;
+}
+.pitch-small-area-away {
+  position: absolute;
+  top: 36.8%; right: 0;
+  width: 5.2%; height: 26.4%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-right: none;
+}
+.pitch-penalty-spot-away {
+  position: absolute;
+  top: 50%; right: 10.5%;
+  width: 5px; height: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+.pitch-d-arc-away {
+  position: absolute;
+  top: 38.5%; right: 9.5%;
+  width: 12%; height: 23%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  clip-path: inset(0 53% 0 0);
+}
+
+/* Balizas */
+.goal-home {
+  position: absolute;
+  top: 43.5%; left: -4px;
+  width: 4px; height: 13%;
+  border: 2px solid #fff;
+  border-right: none;
+  background: rgba(255,255,255,0.2);
+}
+.goal-away {
+  position: absolute;
+  top: 43.5%; right: -4px;
+  width: 4px; height: 13%;
+  border: 2px solid #fff;
+  border-left: none;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Elementos Dinâmicos: Pinos e Barra Inferior continuam iguais... */
+.tactical-token {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: white;
+  cursor: grab;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+.token-ataque { background: #3b82f6; }
+.token-defesa { background: #ef4444; }
+.token-bola { background: #ffffff; color: #000; border-color: #000; font-size: 0.85rem; }
+.animated-move { transition: left 1s ease-in-out, top 1s ease-in-out !important; }
+
+.board-timeline { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.75rem 1rem !important; flex-shrink: 0; }
+.timeline-navigation { display: flex; justify-content: space-between; align-items: center; }
+.frame-counter { font-size: 0.9rem; color: #94a3b8; }
+.timeline-btns { display: flex; gap: 0.5rem; }
+.timeline-arrow { background: #334155; border: none; color: #fff; padding: 0.4rem 0.75rem; border-radius: 4px; cursor: pointer; }
+.timeline-arrow:disabled { opacity: 0.4; cursor: not-allowed; }
+.timeline-add-frame { background: #059669; border: none; color: #fff; padding: 0.4rem 0.75rem; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.play-simulation-btn { background: #22c55e; color: white; border: none; padding: 0.4rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer; }
+.play-simulation-btn.stop-mode { background: #ef4444; }
+.frame-note-input { background: #0f172a; border: 1px solid #334155; color: #fff; padding: 0.5rem; border-radius: 6px; font-size: 0.85rem; width: 100%; box-sizing: border-box; }
+
+.tactical-sidebar-archive { height: 100%; overflow: hidden; }
+.archive-container { height: 100%; display: flex; flex-direction: column; }
+.archive-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; padding-right: 0.25rem; }
+.archive-sidebar-header { display: flex; flex-direction: column; gap: 0.5rem; }
+.archive-subtitle { font-size: 0.8rem; color: #64748b; }
+.open-archive-modal-btn { background: #334155; color: #f8fafc; border: 1px solid #475569; padding: 0.5rem; border-radius: 6px; font-weight: 600; font-size: 0.8rem; cursor: pointer; }
+.archive-play-card { background: #1e293b; border: 1px solid #334155; border-left: 4px solid #64748b; padding: 0.75rem; border-radius: 6px; }
+.archive-play-card.status-publicada { border-left-color: #22c55e; }
+.archive-play-card.status-sugestao { border-left-color: #eab308; background: rgba(234, 179, 8, 0.03); }
+.play-card-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
+.play-badge-cat { font-size: 0.75rem; background: #334155; color: #cbd5e1; padding: 0.2rem 0.5rem; border-radius: 4px; }
+.play-badge-status { font-size: 0.7rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px; }
+.play-badge-status.status-publicada { background: rgba(34,197,94,0.15); color: #22c55e; }
+.play-badge-status.status-sugestao { background: rgba(234, 179, 8, 0.15); color: #eab308; }
+.archive-play-card h4 { font-size: 1rem; margin: 0.3rem 0; color: #f8fafc; }
+.play-author { font-size: 0.8rem; color: #64748b; margin-bottom: 0.6rem; }
+.play-card-actions { display: flex; gap: 0.5rem; }
+.play-action-btn { flex: 1; border: none; font-size: 0.8rem; padding: 0.4rem; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.load-btn { background: #334155; color: #fff; }
+.approve-btn { background: #22c55e; color: #fff; }
+
+.ge-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 2rem; }
+.tactical-large-archive-modal { background: #0f172a; border: 1px solid #1e293b; width: 100%; max-width: 900px; max-height: 85vh; border-radius: 12px; display: flex; flex-direction: column; padding: 1.5rem; }
+.modal-archive-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; }
+.modal-archive-header h2 { margin: 0; color: #f8fafc; }
+.modal-archive-header p { margin: 0.25rem 0 0 0; color: #64748b; font-size: 0.9rem; }
+.close-modal-x-btn { background: transparent; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; }
+.modal-archive-search-bar { display: flex; gap: 1rem; align-items: center; margin: 1rem 0; }
+.modal-search-input { flex: 1; background: #1e293b; border: 1px solid #334155; color: #fff; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.95rem; }
+.search-counter-badge { font-size: 0.85rem; color: #3b82f6; background: rgba(59,130,246,0.1); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: bold; }
+.modal-archive-scroll-area { flex: 1; overflow-y: auto; padding-right: 0.5rem; margin-top: 0.5rem; }
+.modal-archive-grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }

@@ -1,0 +1,220 @@
+.register-container {
+  background-color: #0D1321;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #F8F9FA;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-nav {
+  padding: 24px 5%;
+}
+
+.register-card-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.register-card {
+  background-color: #141C2F;
+  border: 1px solid #232D42;
+  width: 100%;
+  max-width: 580px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.register-header p {
+  color: #8B9BB4;
+  font-size: 15px;
+  margin: 0;
+}
+
+.register-alert.error {
+  background-color: rgba(240, 62, 62, 0.1);
+  color: #F03E3E;
+  border: 1px solid rgba(240, 62, 62, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.register-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8B9BB4;
+  margin-bottom: 8px;
+}
+
+/* Inputs e Selects em Dark Mode sem interferência */
+.register-form input, 
+.register-form select {
+  background-color: #0D1321 !important;
+  border: 1px solid #232D42;
+  color: #FFFFFF !important;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.register-form input:focus, 
+.register-form select:focus {
+  outline: none;
+  background-color: #0D1321 !important;
+  border-color: #F03E3E;
+  box-shadow: 0 0 0 3px rgba(240, 62, 62, 0.15);
+}
+
+/* Proteção extra contra o preenchimento automático (Autofill) do navegador */
+.register-form input:-webkit-autofill,
+.register-form input:-webkit-autofill:hover, 
+.register-form input:-webkit-autofill:focus, 
+.register-form input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0D1321 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8B9BB4;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.eye-btn:hover { 
+  color: #FFFFFF; 
+}
+
+.input-icon { 
+  width: 20px; 
+  height: 20px; 
+}
+
+.register-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FF4B4B, #D62828);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(240, 62, 62, 0.2);
+  transition: transform 0.2s;
+}
+
+.register-submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8B9BB4;
+}
+
+.register-footer a {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.register-footer a:hover {
+  color: #F03E3E;
+}
+
+/* Responsividade total */
+@media (max-width: 650px) {
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Customização para o input de carregamento da foto */
+.register-form input[type="file"].file-input-style {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #8B9BB4 !important;
+  cursor: pointer;
+}
+
+.register-form input[type="file"].file-input-style::file-selector-button {
+  background-color: #232D42;
+  border: none;
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-right: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.register-form input[type="file"].file-input-style::file-selector-button:hover {
+  background-color: #FF4B4B;
+}

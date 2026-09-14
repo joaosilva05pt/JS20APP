@@ -1,0 +1,108 @@
+/* --- MATRIZ DE NOTAS INTERATIVA --- */
+.eva-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background-color: #0f1523;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.eva-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.eva-matrix-table th {
+  background-color: #172033;
+  color: #8b9bb4;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.eva-matrix-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  vertical-align: middle;
+}
+
+.eva-player-cell {
+  color: #fff;
+  min-width: 160px;
+}
+
+/* Inputs Numéricos 0-20 */
+.eva-score-input {
+  width: 55px;
+  background-color: #172033 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  text-align: center;
+  padding: 0.4rem 0.25rem !important;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.eva-score-input:focus {
+  border-color: #3b82f6 !important;
+}
+
+/* Coluna de Realce da Média */
+.cell-highlight {
+  background-color: rgba(59, 130, 246, 0.04);
+  color: #3b82f6;
+  width: 70px;
+}
+
+/* Área de Textos e Observações Lineares */
+.eva-feedback-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 320px;
+}
+
+.eva-text-input {
+  background-color: #172033 !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #cbd5e1 !important;
+  font-size: 0.8rem !important;
+  padding: 0.35rem 0.6rem !important;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.eva-text-input.private {
+  border-color: rgba(234, 179, 8, 0.15) !important;
+  color: #eab308 !important;
+}
+
+/* Animação de Entrada */
+.animate-fade {
+  animation: fadeInEva 0.3s ease-in-out;
+}
+
+@keyframes fadeInEva {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Efeito de desativação inteligente para suplentes com 0 minutos */
+.eva-matrix-table tr.eva-row-disabled {
+  background-color: rgba(15, 21, 35, 0.4) !important;
+  border-left: 3px solid #475569 !important;
+}
+
+.eva-row-disabled .eva-score-input:disabled {
+  background-color: #0b0f19 !important;
+  border-color: rgba(255, 255, 255, 0.02) !important;
+  color: #475569 !important;
+  cursor: not-allowed;
+  font-weight: normal;
+}

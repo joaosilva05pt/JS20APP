@@ -1,0 +1,241 @@
+/* =========================================================
+   ESTILOS OPEN-SPACE DA PÁGINA "PERFIL"
+   Prefixo de classe: pf- (Perfil)
+========================================================= */
+
+.pf-loading-screen {
+  height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f1523;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.pf-open-layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- TOPO ALINHADO --- */
+.pf-open-header {
+  margin-bottom: 2.5rem;
+}
+
+.pf-open-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.pf-header-divider {
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0 0.5rem;
+  font-weight: 300;
+}
+
+.pf-header-highlight {
+  color: #ff5757; 
+  font-weight: 600;
+}
+
+.pf-open-header p {
+  margin: 0;
+  color: #8b9bb4;
+  font-size: 0.95rem;
+}
+
+/* --- ESPAÇO DE TRABALHO FORMULÁRIO --- */
+.pf-open-workspace {
+  max-width: 550px;
+  width: 100%;
+}
+
+/* Identidade Visual Solta */
+.pf-meta-identity-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pf-avatar-large {
+  width: 70px;
+  height: 70px;
+  background-color: #172033;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pf-identity-text h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.pf-role-badge {
+  display: inline-block;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* --- FORMULÁRIO --- */
+.pf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pf-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.pf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.pf-group label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8b9bb4;
+  letter-spacing: 0.5px;
+}
+
+.pf-form input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #172033; /* Fundo idêntico aos inputs unificados */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.pf-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.pf-input-disabled {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  color: #64748b !important;
+  border-color: rgba(255, 255, 255, 0.03) !important;
+  cursor: not-allowed;
+}
+
+.pf-help-text {
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+/* --- AÇÕES e BOTÕES --- */
+.pf-actions-row {
+  margin-top: 0.75rem;
+}
+
+.pf-submit-btn {
+  background-color: #ff5757;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(255, 87, 87, 0.15);
+}
+
+.pf-submit-btn:hover {
+  background-color: #e04444;
+}
+
+.pf-back-btn {
+  background-color: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 2.5rem;
+  width: max-content;
+  cursor: pointer;
+}
+
+.pf-back-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Alertas de Feedback */
+.pf-global-alert {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.pf-global-alert.success {
+  background-color: rgba(64, 192, 87, 0.1);
+  border: 1px solid rgba(64, 192, 87, 0.2);
+  color: #40c057;
+}
+
+.pf-global-alert.error {
+  background-color: rgba(224, 49, 49, 0.1);
+  border: 1px solid rgba(224, 49, 49, 0.2);
+  color: #ff6b6b;
+}
+
+/* Suporte visual para selects e inputs de ficheiro no Perfil */
+.pf-select-style {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #172033;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.pf-select-style:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.pf-file-input {
+  padding: 0.7rem 1rem !important;
+  font-size: 0.85rem;
+  color: #8b9bb4 !important;
+  cursor: pointer;
+}

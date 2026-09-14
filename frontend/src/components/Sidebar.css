@@ -1,0 +1,188 @@
+/* =========================================================
+   SIDEBAR PRINCIPAL - DESIGN "BALNEÁRIO" UNIFICADO
+========================================================= */
+
+.sidebar-container {
+  width: 260px; /* Ligeiramente mais largo para dar espaço ao texto forte */
+  height: 100vh;
+  background-color: #0f1523; /* Fundo base escuro, igual ao do balneário */
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: #fff;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* --- TOPO E LOGO --- */
+.sidebar-top-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidebar-logo {
+  padding: 2rem 1.5rem; /* Mais respiro no topo, igual ao balneário */
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.sidebar-logo .text-red {
+  color: #ff5757;
+}
+
+/* --- ÁREA DE NAVEGAÇÃO --- */
+.sidebar-menu {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+}
+
+/* --- LINKS PADRÃO (BRANCOS E FORTES) --- */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: #ffffff; /* Texto branco como no balneário */
+  text-decoration: none;
+  font-weight: 600; /* Letra mais grossa e legível */
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* HOVER E ESTADO ATIVO (CORAL/VERMELHO DO BALNEÁRIO) */
+.sidebar-link:hover {
+  color: #ff6b6b;
+  transform: translateX(3px); /* Pequeno salto ao passar o rato */
+}
+
+.sidebar-link.active {
+  color: #ff6b6b; /* Cor idêntica à de "Gestão de Membros" no teu print */
+}
+
+/* --- TÍTULOS DE SECÇÃO DINÂMICAS --- */
+.sidebar-section-group {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8b9bb4; /* O azul acinzentado do "DEPARTAMENTOS" */
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+/* --- LINKS RECENTES (Ligeiramente mais pequenos) --- */
+.sidebar-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sidebar-recent-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  color: #8b9bb4; /* Mantém-se mais discreto para não roubar a atenção */
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-recent-link:hover,
+.sidebar-recent-link.active {
+  color: #3b82f6; /* Estes mantemos com azul desportivo para diferenciar */
+  transform: translateX(3px);
+}
+
+/* --- FOOTER DE PERFIL E LOGOUT --- */
+.sidebar-footer {
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.15); /* Fundo muito subtil para separar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow: hidden;
+  flex: 1;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: #8b9bb4;
+}
+
+.sidebar-logout-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #8b9bb4;
+}
+
+.sidebar-logout-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ff5757;
+}

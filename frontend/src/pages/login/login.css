@@ -1,0 +1,212 @@
+.login-container {
+  background-color: #0D1321;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #F8F9FA;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-nav {
+  padding: 24px 5%;
+}
+
+.login-card-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  background-color: #141C2F;
+  border: 1px solid #232D42;
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.login-header p {
+  color: #8B9BB4;
+  font-size: 15px;
+  margin: 0;
+}
+
+.login-alert.error {
+  background-color: rgba(240, 62, 62, 0.1);
+  color: #F03E3E;
+  border: 1px solid rgba(240, 62, 62, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.login-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8B9BB4;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #F03E3E;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   Inputs e Preenchimento Automático
+   ========================================= */
+.login-form input {
+  background-color: #0D1321;
+  border: 1px solid #232D42;
+  color: #FFFFFF;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+
+.login-form input:focus {
+  outline: none;
+  background-color: #0D1321 !important;
+  border-color: #F03E3E;
+  box-shadow: 0 0 0 3px rgba(240, 62, 62, 0.15);
+}
+
+/* Força os navegadores (Chrome/Edge) a manterem o fundo escuro no autofill */
+.login-form input:-webkit-autofill,
+.login-form input:-webkit-autofill:hover, 
+.login-form input:-webkit-autofill:focus, 
+.login-form input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0D1321 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8B9BB4;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.eye-btn:hover { color: #FFFFFF; }
+.input-icon { width: 20px; height: 20px; }
+
+.login-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FF4B4B, #D62828);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(240, 62, 62, 0.2);
+  transition: transform 0.2s;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #8B9BB4;
+}
+
+.login-footer a {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.login-footer a:hover {
+  color: #F03E3E;
+}
+
+/* Opção Manter Sessão Iniciada */
+.remember-me-group {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.remember-me-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #8B9BB4;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-me-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #F03E3E; 
+  cursor: pointer;
+}

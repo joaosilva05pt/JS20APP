@@ -1,0 +1,160 @@
+/* =========================================================
+   ESTILOS OPEN-SPACE DA PÁGINA "CRIAR CLUBE"
+   Prefixo de classe: cc- (Criar Clube)
+========================================================= */
+
+.cc-open-layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- TOPO ALINHADO --- */
+.cc-open-header {
+  margin-bottom: 2.5rem;
+}
+
+.cc-open-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.cc-header-divider {
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0 0.5rem;
+  font-weight: 300;
+}
+
+.cc-header-highlight {
+  color: #ff5757; /* O coral/vermelho vibrante */
+  font-weight: 600;
+}
+
+.cc-open-header p {
+  margin: 0;
+  color: #8b9bb4;
+  font-size: 0.95rem;
+}
+
+/* --- ESPAÇO DE TRABALHO ABERTO (SEM CARD) --- */
+.cc-open-workspace {
+  max-width: 550px; /* Mantém a largura ideal dos campos */
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.cc-open-section-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+}
+
+/* --- FORMULÁRIO --- */
+.cc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cc-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.cc-group label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8b9bb4;
+  letter-spacing: 0.5px;
+}
+
+.cc-form input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #172033; /* Fundo integrado dos inputs do sistema */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cc-form input:focus {
+  outline: none;
+  border-color: #ff5757; /* Destaque no foco */
+}
+
+/* Customização do calendário */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+/* --- BOTÕES E STATUS --- */
+.cc-submit-btn {
+  margin-top: 1rem;
+  background-color: #ff5757;
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(255, 87, 87, 0.15);
+}
+
+.cc-submit-btn:hover:not(:disabled) {
+  background-color: #e04444;
+}
+
+.cc-submit-btn:disabled {
+  background-color: #1e293b;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.cc-back-btn {
+  background-color: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 2.5rem;
+  width: max-content;
+  cursor: pointer;
+}
+
+.cc-back-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.cc-alert-error {
+  background-color: rgba(224, 49, 49, 0.1);
+  color: #ff6b6b;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid rgba(224, 49, 49, 0.2);
+}

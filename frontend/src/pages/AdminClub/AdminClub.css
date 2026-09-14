@@ -1,0 +1,737 @@
+/* =========================================================
+   PÁGINA: ADMIN CLUB (PAINEL DE ADMINISTRAÇÃO)
+   Prefixo de classe: ac- (Admin Club)
+========================================================= */
+
+/* --- TELA DE CARREGAMENTO INTEGRADAS --- */
+.admin-loading-screen {
+  height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f1523;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.admin-loading-screen.error-state {
+  color: #ff6b6b;
+}
+
+/* --- ESPAÇO DE TRABALHO DIREITO --- */
+.ac-dashboard-pane {
+  min-height: 100vh;
+  background-color: #0f1523; /* Fundo escuro real do ecossistema */
+  color: #ffffff;
+}
+
+
+.ac-minimal-back-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ac-minimal-back-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.ac-admin-brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.ac-brand-red {
+  color: #ff5757;
+}
+
+/* --- CABEÇALHO PRINCIPAL E TABS --- */
+.ac-main-header {
+  margin-bottom: 2.5rem;
+}
+
+.ac-header-title-area h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+}
+
+.ac-tab-navigation {
+  display: flex;
+  gap: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ac-tab-trigger {
+  background: none;
+  border: none;
+  color: #8b9bb4;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.ac-tab-trigger:hover {
+  color: #ffffff;
+}
+
+.ac-tab-trigger.active {
+  color: #ff5757; /* Vermelho/Coral do balneário ativo */
+}
+
+.ac-tab-trigger.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff5757;
+}
+
+/* --- INTROS DAS SECÇÕES --- */
+.ac-section-intro-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.ac-intro-text h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.ac-intro-text p {
+  color: #8b9bb4;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.ac-intro-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* --- BOTÕES GERAIS DO WORKSPACE --- */
+.ac-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ac-btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ac-btn-filled-red {
+  background-color: #ff5757;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 87, 87, 0.2); /* Brilho realista soft */
+}
+
+.ac-btn-filled-red:hover {
+  background-color: #e04444;
+}
+
+/* =========================================================
+   GRID E CARTÕES PREMIUM DE DIRIGENTES
+========================================================= */
+.ac-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.ac-member-card {
+  background-color: #172033; /* Cor interna dos painéis escuros */
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.2s ease;
+}
+
+.ac-member-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.ac-member-avatar {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #8b9bb4;
+}
+
+.ac-member-meta {
+  flex: 1;
+  overflow: hidden;
+}
+
+.ac-member-meta h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ac-member-email {
+  font-size: 0.85rem;
+  color: #8b9bb4;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ac-member-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Badges de Cargos */
+.ac-badge-role {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ac-badge-role.president {
+  background-color: rgba(252, 196, 25, 0.1);
+  color: #fcc419;
+  border: 1px solid rgba(252, 196, 25, 0.2);
+}
+
+.ac-badge-role.staff {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ac-inline-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ac-inline-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ac-inline-actions button:hover {
+  text-decoration: underline;
+}
+
+.ac-btn-action-edit { color: #3b82f6; }
+.ac-btn-action-remove { color: #ff6b6b; }
+
+/* =========================================================
+   ZONA DE CONVITES PENDENTES
+========================================================= */
+.ac-invites-section {
+  margin-top: 3.5rem;
+}
+
+.ac-invites-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.ac-invites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1rem;
+}
+
+.ac-invite-card {
+  background-color: rgba(23, 32, 51, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ac-invite-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow: hidden;
+}
+
+.ac-invite-details strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ac-invite-sub {
+  font-size: 0.8rem;
+  color: #8b9bb4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ac-badge-invite-role {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}
+
+.ac-btn-revoke-invite {
+  background-color: transparent;
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ac-btn-revoke-invite:hover {
+  background-color: #ff6b6b;
+  color: #ffffff;
+  border-color: #ff6b6b;
+}
+
+/* =========================================================
+   SEPARADOR: DEFINIÇÕES GERAIS LADO A LADO
+========================================================= */
+.ac-split-settings-layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.ac-settings-column-form {
+  flex: 1.4;
+  min-width: 320px;
+}
+
+.ac-settings-column-danger {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Formulário de Identidade */
+.ac-premium-form-box {
+  background-color: #172033;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ac-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ac-form-group label {
+  color: #8b9bb4;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ac-form-row-twin {
+  display: flex;
+  gap: 1rem;
+}
+
+.ac-premium-form-box input,
+.ac-modal-form input,
+.ac-modal-form select {
+  background-color: #0f1523;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ac-premium-form-box input:focus,
+.ac-modal-form input:focus,
+.ac-modal-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Customização do input tipo Date */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+.ac-btn-save-settings {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.ac-btn-save-settings:hover {
+  background-color: #2563eb;
+}
+
+/* Caixa Crítica da Zona de Perigo */
+.ac-danger-zone-card {
+  border: 1px solid rgba(224, 49, 49, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: rgba(224, 49, 49, 0.02);
+  box-shadow: 0 0 20px rgba(224, 49, 49, 0.05); /* Glow Realista Soft */
+}
+
+.ac-danger-zone-card h3 {
+  color: #ff6b6b;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.ac-danger-zone-card p {
+  color: #8b9bb4;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+}
+
+.ac-btn-dissolve-trigger {
+  background-color: #e03131;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ac-btn-dissolve-trigger:hover {
+  background-color: #c92a2a;
+}
+
+/* =========================================================
+   SISTEMA DE MODALS (GLASS WINDOWS)
+========================================================= */
+.ac-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(11, 15, 25, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.ac-modal-window {
+  background-color: #172033;
+  padding: 2.2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 460px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.ac-modal-window.critical-destruction-theme {
+  border-color: rgba(224, 49, 49, 0.4);
+}
+
+.ac-modal-window h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.ac-modal-subtext {
+  font-size: 0.9rem;
+  color: #8b9bb4;
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
+}
+
+.ac-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ac-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.ac-btn-modal-cancel {
+  background: transparent;
+  color: #8b9bb4;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+.ac-btn-modal-cancel:hover {
+  color: #ffffff;
+}
+
+.ac-btn-modal-confirm {
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.ac-btn-modal-confirm.success { background-color: #3b82f6; }
+.ac-btn-modal-confirm.success:hover { background-color: #2563eb; }
+
+.ac-btn-modal-confirm.security { background-color: #2b8a3e; }
+.ac-btn-modal-confirm.security:hover { background-color: #237032; }
+
+.ac-btn-modal-confirm.danger { background-color: #e03131; }
+.ac-btn-modal-confirm.danger:hover { background-color: #c92a2a; }
+
+.ac-btn-modal-confirm:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* --- ALERTAS GLOBAIS INTEGRADAS --- */
+.ac-global-alert {
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.ac-global-alert.success {
+  background-color: rgba(43, 138, 62, 0.1);
+  border: 1px solid rgba(43, 138, 62, 0.2);
+  color: #40c057;
+}
+
+.ac-global-alert.error {
+  background-color: rgba(224, 49, 49, 0.1);
+  border: 1px solid rgba(224, 49, 49, 0.2);
+  color: #ff6b6b;
+}
+
+/* Animações Fluidas */
+.animate-fade-in {
+  animation: acFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes acFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- INTEGRAÇÃO DO HEADER (IGUAL AO NOVO ESCALÃO) --- */
+.ac-main-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+}
+
+.ac-main-header h2 .header-divider {
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0 0.5rem;
+  font-weight: 300;
+}
+
+.ac-main-header h2 .header-club-name {
+  color: #ff5757; /* O vermelho/coral vibrante */
+  font-weight: 600;
+}
+
+/* --- COMPONENTES VISUAIS DINÂMICOS (FOTOS E EMBLEMAS) --- */
+
+.ac-member-avatar-img {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ac-emblema-preview-zone {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ac-emblema-settings-view {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* --- COMPONENTES VISUAIS EXTRAS (EMBLEMAS E FILES) --- */
+
+.ac-emblema-preview-zone {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ac-emblema-settings-view {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Formatação do input de ficheiro de imagem */
+.ac-premium-form-box .pf-file-input {
+  width: 100%;
+  background-color: #0f1523;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #8b9bb4 !important;
+  padding: 0.7rem 1rem !important;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* --- COMPONENTES VISUAIS DINÂMICOS (FOTOS E EMBLEMAS) --- */
+
+.ac-member-avatar-img {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ac-emblema-preview-zone {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ac-emblema-settings-view {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Customização uniforme para o input de carregar ficheiro (Emblema) */
+.ac-premium-form-box .pf-file-input {
+  width: 100%;
+  background-color: #0f1523;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #8b9bb4 !important;
+  padding: 0.7rem 1rem !important;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}

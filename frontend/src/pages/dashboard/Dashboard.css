@@ -1,0 +1,189 @@
+/* =========================================================
+   ESTILOS PREMIUM DO HUB CENTRAL / DASHBOARD
+   Prefixo de classe: db- (Dashboard)
+========================================================= */
+
+.db-loading-screen {
+  height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f1523;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.db-open-layout-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- CABEÇALHO IMITANDO O BALNEÁRIO --- */
+.db-open-header {
+  margin-bottom: 2.5rem;
+}
+
+.db-open-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.db-header-divider {
+  color: rgba(255, 255, 255, 0.15);
+  margin: 0 0.5rem;
+  font-weight: 300;
+}
+
+.db-header-club-name {
+  color: #8b9bb4; /* O tom cinza-azul do clube secundário */
+  font-weight: 600;
+}
+
+.db-open-header p {
+  margin: 0;
+  color: #8b9bb4;
+  font-size: 0.95rem;
+}
+
+/* --- GRELHA FLUIDA DE TRABALHO --- */
+.db-main-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Links limpos sem herdar sublinhados */
+.db-card-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- CARDS PREMIUM BASEADO NOS DEPARTAMENTOS --- */
+.db-premium-card {
+  background-color: #172033; /* Fundo base escuro dos teus cards */
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  min-height: 210px;
+  box-sizing: border-box;
+}
+
+.db-premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
+}
+
+.db-card-icon {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.db-premium-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.db-premium-card p {
+  margin: 0 0 1.5rem 0;
+  color: #8b9bb4;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  flex: 1;
+}
+
+/* --- IDENTIDADE CROMÁTICA DO BALNEÁRIO --- */
+
+/* Equipas em Geral (Estilo Coral/Vermelho Suave Ativo) */
+.db-premium-card.team-locker-theme:hover {
+  border-color: #ff5757;
+  background: linear-gradient(145deg, #172033 0%, rgba(255, 87, 87, 0.02) 100%);
+}
+.text-coral { color: #ff5757; }
+
+/* Administração (Bordas Vermelhas do Print do Balneário) */
+.db-premium-card.admin-theme:hover {
+  border-color: #ef4444;
+  background: linear-gradient(145deg, #172033 0%, rgba(239, 68, 68, 0.02) 100%);
+}
+
+/* Convites (Estilo Dourado) */
+.db-premium-card.invite-theme {
+  border-color: rgba(234, 179, 8, 0.2);
+}
+.db-premium-card.invite-theme:hover {
+  border-color: #eab308;
+}
+
+/* Metas e Subtextos específicos */
+.db-team-meta {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.db-action-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-top: auto;
+  transition: opacity 0.2s;
+}
+
+.db-premium-card:hover .db-action-link {
+  opacity: 0.85;
+}
+
+/* --- BADGES SUBTIS --- */
+.db-card-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.db-card-badge.gold { background-color: rgba(234, 179, 8, 0.1); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.15); }
+.db-card-badge.red { background-color: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.15); }
+
+/* --- AÇÕES DE CONVITES --- */
+.db-invite-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+.db-invite-actions button {
+  flex: 1;
+  padding: 0.55rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.db-invite-actions button:hover { opacity: 0.9; }
+.db-btn-accept { background-color: #22c55e; color: #ffffff; }
+.db-btn-reject { background-color: #374151; color: #ffffff; }
+
+/* --- REGRAS DE BORDAS TRACEJADAS ABERTAS --- */
+.border-dashed { border: 1px dashed rgba(59, 130, 246, 0.25); background: transparent; }
+.border-dashed:hover { border-color: #3b82f6; background-color: rgba(59, 130, 246, 0.02); }
+
+.border-dashed-red { border: 1px dashed rgba(239, 68, 68, 0.25); background: transparent; cursor: pointer; }
+.border-dashed-red:hover { border-color: #ef4444; background-color: rgba(239, 68, 68, 0.02); }
+
+.blue-text { color: #3b82f6; }
+.red-text { color: #ef4444; }

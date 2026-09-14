@@ -1,0 +1,28 @@
+/* Limpa as margens padrão do navegador e força a ocupar 100% do ecrã */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #F3F5F7; 
+}
+
+/* Garante que nenhum elemento passa os limites da página criando scroll horizontal */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 1. Importar a fonte moderna do Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 2. Forçar a app inteira a usar esta fonte */
+* {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* 3. Garantir que os inputs e botões também herdam a fonte (por defeito o navegador teima em não o fazer) */
+input, select, textarea, button {
+  font-family: inherit;
+}

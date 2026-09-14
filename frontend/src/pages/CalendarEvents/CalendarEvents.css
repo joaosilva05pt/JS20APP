@@ -1,0 +1,258 @@
+/* --- COMPATIBILIDADE DO CORPO DO CALENDÁRIO COM O GESTÃO --- */
+.ce-apple-picker-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #172033;
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ce-apple-week {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  flex: 1;
+  justify-content: center;
+}
+
+.ce-apple-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  color: #8b9bb4;
+  background-color: #0f1523;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.ce-apple-day:hover {
+  background-color: #131b2e;
+  color: #fff;
+}
+
+.ce-apple-day.active {
+  background-color: #3b82f6; /* Azul JS20 oficial do botão active do teu CSS */
+  color: white;
+  border-color: #3b82f6;
+}
+
+.ce-day-name {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.ce-day-number {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.ce-picker-nav {
+  background: transparent;
+  border: none;
+  color: #8b9bb4;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+}
+
+.ce-picker-nav:hover { color: #fff; }
+
+/* --- CRONOLOGIA VERTICAL --- */
+.ce-vertical-timeline {
+  padding: 0.5rem;
+}
+
+.ce-timeline-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+.ce-timeline-events {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ce-timeline-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.ce-time-column {
+  width: 55px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #3b82f6;
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.ce-event-block {
+  flex: 1;
+  background-color: #0f1523;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #475569;
+  transition: all 0.2s;
+}
+
+.ce-event-block:hover {
+  background-color: #131b2e;
+}
+
+.ce-event-block.type-jogo { border-left-color: #ef4444; }
+.ce-event-block.type-treino { border-left-color: #22c55e; }
+.ce-event-block.type-estagio { border-left-color: #eab308; }
+.ce-event-block.type-reuniao { border-left-color: #a855f7; }
+
+.ce-event-info h4 { margin: 0 0 0.25rem 0; font-size: 1.05rem; color: #fff; }
+.ce-event-meta { font-size: 0.8rem; color: #8b9bb4; }
+
+/* Estados Especiais */
+.ghost-event { opacity: 0.4; filter: grayscale(80%); }
+
+/* --- SELECÇÃO / CONVOCATÓRIA --- */
+.ce-convocatoria-box {
+  background-color: #0f1523;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-top: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.ce-convocatoria-box h4 { margin: 0 0 0.75rem 0; font-size: 0.95rem; color: #fff; }
+.ce-convocatoria-actions { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+.ce-convocatoria-actions button {
+  background: transparent; border: 1px solid rgba(255,255,255,0.1);
+  color: #8b9bb4; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer;
+}
+.ce-convocatoria-actions button:hover { color: #fff; border-color: #3b82f6; }
+
+.ce-players-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem; max-height: 180px; overflow-y: auto; padding-right: 0.25rem;
+}
+.ce-player-checkbox {
+  display: flex; align-items: center; gap: 0.5rem; color: #8b9bb4; font-size: 0.85rem; cursor: pointer;
+}
+.ce-player-checkbox input { cursor: pointer; }
+
+/* REALCE DO DEPARTAMENTO MÉDICO (BOLETIM CLÍNICO) */
+.ce-player-injured-disabled {
+  filter: grayscale(100%);
+  cursor: not-allowed !important;
+  background: rgba(239, 68, 68, 0.05);
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+/* --- INTERACTIVE BOTÕES / BADGES --- */
+.ce-btn-create-event {
+  background-color: #22c55e; color: #fff; border: none; padding: 0.6rem 1.2rem;
+  border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;
+}
+.ce-btn-create-event:hover { background-color: #16a34a; transform: scale(1.02); }
+
+.ce-btn-manage-event {
+  background-color: #172033; border: 1px solid rgba(255,255,255,0.08); color: #fff;
+  padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer;
+}
+.ce-btn-manage-event:hover { background-color: #1d2a45; }
+
+.ce-action-buttons { display: flex; gap: 0.5rem; }
+.ce-btn-confirm { background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem;}
+.ce-btn-reject { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #f87171; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem;}
+.ce-btn-confirm:hover { background: #22c55e; color: #fff; }
+.ce-btn-reject:hover { background: #ef4444; color: #fff; }
+
+.ce-status-badge { padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.ce-status-badge.status-presente { background: rgba(34,197,94,0.1); color: #22c55e; }
+.ce-status-badge.status-pendente { background: rgba(234,179,8,0.1); color: #eab308; }
+.ce-status-badge.status-justificado { background: rgba(168,85,247,0.1); color: #a855f7; }
+.ce-status-badge.status-ausente { background: rgba(239,68,68,0.1); color: #ef4444; }
+.ce-ghost-badge { background-color: #172033; color: #64748b; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+
+/* --- MODAIS COM ENQUADRAMENTO GLOBAL --- */
+.ce-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.75); display: flex; align-items: center; justify-content: center; z-index: 2000; padding: 1rem; }
+.ce-modal-window { background-color: #172033; padding: 2rem; border-radius: 12px; width: 100%; border: 1px solid rgba(255, 255, 255, 0.05); color: #fff; }
+.ce-modal-subtext { font-size: 0.8rem; color: #8b9bb4; margin: 0.25rem 0 1.25rem 0; }
+.ce-form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
+.ce-form-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: #fff; }
+.ce-form-group input, .ce-form-group select, .ce-form-group textarea { background-color: #0f1523; border: 1px solid rgba(255, 255, 255, 0.08); color: #fff; padding: 0.6rem 0.75rem; border-radius: 6px; font-size: 0.9rem; }
+.ce-form-row-twin { display: flex; gap: 1rem; }
+.ce-form-row-twin .ce-form-group { flex: 1; }
+.ce-modal-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; }
+.ce-btn-modal-cancel { background: transparent; border: none; color: #8b9bb4; cursor: pointer; padding: 0.5rem 1rem; font-weight: 600; }
+.ce-btn-modal-confirm { background-color: #3b82f6; color: #fff; border: none; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.ce-btn-modal-confirm.success { background-color: #22c55e; }
+.ce-btn-modal-confirm.warning { background-color: #eab308; color: #000; }
+
+/* --- ABAS INTERNAS DO CONTROLADOR --- */
+.ce-modal-header-tabs { border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 1rem; padding-bottom: 0.25rem; }
+.ce-tabs { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+.ce-tab-btn { background: transparent; border: none; color: #8b9bb4; padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; border-radius: 6px; }
+.ce-tab-btn.active { color: #fff; background-color: #3b82f6; }
+.ce-presencas-view { display: flex; flex-direction: column; gap: 0.75rem; }
+.ce-presenca-grupo { background-color: #0f1523; border: 1px solid rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px; }
+.ce-presenca-grupo h4 { margin: 0 0 0.5rem 0; font-size: 0.9rem; }
+.ce-presenca-grupo ul { margin: 0; padding-left: 1.25rem; font-size: 0.85rem; color: #cbd5e1; }
+.ce-presenca-grupo.confirmados h4 { color: #22c55e; }
+.ce-presenca-grupo.ausentes h4 { color: #ef4444; }
+.ce-presenca-grupo.pendentes h4 { color: #eab308; }
+
+/* --- ESTADO DE EVENTO TERMINADO/TRANCADO (ESTILO BALNEÁRIO) --- */
+.ce-event-block.event-locked {
+  background-color: #0b0f19 !important; /* Fundo cinza escuro/baço */
+  border-left-color: #475569 !important; /* Linha lateral neutra/fria */
+  opacity: 0.65; /* Efeito ligeiramente transparente/fantasma */
+  position: relative;
+}
+
+.ce-event-block.event-locked::after {
+  content: '🔒';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* SCROLLBAR ESTRUTURADO PARA O PLANTEL (TEMA ESCURO) */
+.ce-players-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.ce-players-grid::-webkit-scrollbar-track {
+  background: #0f1523;
+}
+.ce-players-grid::-webkit-scrollbar-thumb {
+  background: #2d3748;
+  border-radius: 10px;
+}
+.ce-players-grid::-webkit-scrollbar-thumb:hover {
+  background: #4a5568;
+}
+
+/* AJUSTES DE RESPONSIVIDADE E ÁREA DE TOQUE ATIVA */
+@media (max-width: 768px) {
+  .ce-apple-day {
+    min-width: 60px;
+    padding: 0.8rem 1rem;
+  }
+  .ce-picker-nav {
+    font-size: 1.5rem;
+  }
+}

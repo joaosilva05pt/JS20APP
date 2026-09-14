@@ -1,0 +1,145 @@
+.settings-module-pane {
+  flex: 1;
+  padding: 2rem;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.settings-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.settings-header-zone {
+  margin-bottom: 2rem;
+}
+
+.settings-header-zone h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.settings-header-zone p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.settings-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 850px) {
+  .settings-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Formulários */
+.settings-form {
+  margin-top: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #d1d5db;
+}
+
+.form-group input, .form-group select {
+  background: #1f2937;
+  border: 1px solid #4b5563;
+  color: #fff;
+  padding: 0.65rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+.form-group input:disabled, .form-group select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-save-settings {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-save-settings:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+/* Zona de Perigo */
+.settings-danger-zone-card {
+  border: 1px solid #ef4444;
+}
+
+.danger-title {
+  color: #ef4444 !important;
+}
+
+.danger-desc {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  line-height: 1.4;
+}
+
+.danger-box {
+  background: #111827;
+  border-radius: 6px;
+  padding: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.danger-box h5 {
+  margin: 0 0 0.5rem 0;
+  color: #f97316;
+}
+
+.danger-box ul {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.danger-box li {
+  margin-bottom: 0.4rem;
+}
+
+.btn-danger-action {
+  background: #ef4444;
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-danger-action:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.btn-danger-action:disabled {
+  background: #4b5563;
+  opacity: 0.6;
+  cursor: not-allowed;
+}

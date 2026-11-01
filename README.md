@@ -1,158 +1,218 @@
-⚽ JS20APP — Integrated Sports Management & Intelligence Platform
-JS20APP is a decoupled full-stack platform designed to modernize and centralize football club management, locker room dynamics, and youth academy operations. It combines multi-dimensional athlete performance evaluations, interactive frame-by-frame tactical planning, and sports gamification into a single system.
+# ⚽ JS20APP --- Integrated Sports Management & Intelligence Platform
 
-📌 Key Features & Modules
-1. Tactical Intelligence & Analytics Radar
-Performance Evaluation System (0–20 Scale): Comprehensive individual and team assessment across 6 core attributes: Shooting, Passing, Pace, Technique, Defending, and Mental.
+![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/Academic-PAP%20%2F%20TFC-brightgreen?style=for-the-badge)
 
-Lineup Selection Support Algorithm: Mathematical distinction between cumulative season consistency (Season) and immediate competitive fitness/form (Score).
+**JS20APP** is a decoupled full-stack solution designed to modernize and
+centralize the management of football clubs, locker rooms, and youth
+academy teams. The platform brings together multidimensional athlete
+evaluations, interactive frame-by-frame tactical planning, and sports
+engagement through a comprehensive gamification engine.
 
-Interactive Tactical Radar: Dynamic radar charts (Recharts) comparing an athlete's profile against positional and team averages.
+------------------------------------------------------------------------
 
-Match-Day Dossier: One-click export of technical match sheets and consolidated analytical reports to PDF format (jsPDF & html2canvas).
+## 📌 Key Features & Modules
 
-2. Digital Tactical Board (Keyframe Engine)
-Frame-by-Frame Simulation: Build, sequence, and animate tactical plays, pressing schemes, and set-pieces.
+### 1. Tactical Intelligence & Analytics Radar
 
-Responsive Drag-and-Drop: Percentage-based relative coordinates (x%, y%) ensure tactical setups preserve accurate spacing across any screen resolution.
+-   **Performance Evaluation (0--20 Scale):** Individual and team
+    assessments based on 6 key technical and cognitive attributes:
+    Shooting, Passing, Pace, Technique, Defending, and Mental.
+-   **Lineup Selection Support Algorithm:** A mathematical distinction
+    between cumulative season consistency (**Season**) and immediate
+    physical and competitive readiness (**Score**).
+-   **Interactive Tactical Radar:** Dynamic polar charts (*Recharts*)
+    comparing an athlete's technical profile with positional or team
+    averages.
+-   **Match-Day Dossier:** Direct export of match sheets and
+    consolidated technical reports to PDF (*jsPDF* and *html2canvas*).
 
-Locker Room Collaboration: Interactive hub where players can study manager setups and propose strategic variations.
+### 2. Digital Tactical Board (Keyframe Engine)
 
-3. Locker Room Gamification & Store
-Progression System (Levels 1 to 10): Dynamic XP progression driven by punctuality, training performance, and milestone achievements.
+-   **Frame-by-Frame Simulation:** Build and animate training exercises,
+    game situations, and set pieces.
+-   **Responsive Drag & Drop:** Player and ball positioning based on
+    relative percentage coordinates `(x%, y%)`, ensuring visual accuracy
+    at any screen resolution.
+-   **Locker Room Collaboration:** An interactive space where players
+    can view prepared tactics and suggest strategic variations to the
+    manager.
 
-Mission Catalog: Individual targets, sector-specific challenges (Defense, Midfield, Attack), and club-wide objectives.
+### 3. Locker Room Gamification & Store
 
-Virtual Store: Earned training points can be redeemed for club rewards, equipment benefits, and profile customizations.
+-   **Level System (1 to 10):** Dynamic experience (XP) progression
+    driven by attendance, commitment, and training performance.
+-   **Mission Catalog:** Individual goals, sector-specific challenges
+    (Defense, Midfield, Attack), and collective locker room objectives.
+-   **Virtual Store:** Convert accumulated points into rewards, club
+    items, and profile customizations.
 
-4. Comprehensive Club Management & Player Care
-Schedules & Rosters: Training sessions and match scheduling with automated attendance tracking and absence logging.
+### 4. Comprehensive Club Management & Player Care
 
-Medical Department & Nutrition: Injury tracking, rehabilitation timelines, and personalized nutritional plans.
+-   **Schedule & Squad Management:** Training and match scheduling with
+    detailed attendance tracking and absence justifications.
+-   **Medical Department & Nutrition:** Medical records, injury
+    registration and monitoring, recovery plans, and nutritional
+    guidance.
+-   **Data Preservation (*Soft Deletes*):** Securely maintains sports
+    history without compromising relational integrity.
 
-Data Integrity (Soft Deletes): Preserves full historical player and match records without breaking relational integrity.
+------------------------------------------------------------------------
 
-🏛️ System Architecture
-The project implements a decoupled architecture where an SPA frontend interacts with a secure RESTful API backend:
+## 🏛️ System Architecture
 
-backend/: RESTful API built on Laravel 11 (PHP 8.3)
+The application uses a decoupled architecture in which the Frontend
+(SPA) communicates with the Backend's secure REST API:
 
-app/Console/: Custom Artisan administrative commands
+``` text
+JS20APP/
+├── backend/                  # Laravel REST API (PHP 8.3)
+│   ├── app/
+│   │   ├── Console/          # Custom Artisan commands
+│   │   ├── Http/Controllers/ # API endpoints and business logic
+│   │   └── Models/           # Relational Eloquent ORM models
+│   ├── database/
+│   │   ├── migrations/       # PostgreSQL database schema
+│   │   └── seeders/          # Default data (missions, levels, store)
+│   └── routes/api.php        # API routes and authentication
+│
+├── frontend/                 # React SPA (Vite)
+│   ├── src/
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/            # Views (Dashboard, Locker Room, Tactical Board, etc.)
+│   │   └── services/         # HTTP communication layer
+│   └── package.json          # Frontend dependencies
+│
+└── .gitignore                # Excludes dependencies and credentials
+```
 
-app/Http/Controllers/: Domain business logic and API endpoints
+## 🛠️ Tech Stack
 
-app/Models/: Eloquent ORM relational models
+### Backend
 
-database/migrations/: PostgreSQL schema definitions
+-   **Language:** PHP 8.3
+-   **Framework:** Laravel 11.x
+-   **Database:** PostgreSQL (pgsql), managed through Eloquent ORM
+-   **Authentication:** Laravel Sanctum (session cookies/tokens with
+    CORS credentials enabled)
+-   **Security:** Bcrypt password hashing (`Hash::make`) and granular
+    access authorization
 
-database/seeders/: Baseline application datasets (levels, missions, store)
+### Frontend
 
-routes/api.php: API endpoint declarations and Sanctum authentication
+-   **Library:** React 18 (Vite)
+-   **Routing:** React Router DOM (Dual-Sidebar architecture: Club
+    vs. Locker Room)
+-   **Data Visualization:** Recharts
+-   **Document Export:** jsPDF & html2canvas
+-   **Styling:** Modular CSS3 and native SVG assets
 
-frontend/: Single-Page Application built with React 18 & Vite
+------------------------------------------------------------------------
 
-src/components/: Reusable interface components
+## ⚙️ Local Setup & Installation
 
-src/pages/: Views (Dashboard, Locker Room, Tactical Board, etc.)
+### Prerequisites
 
-src/services/: HTTP API client layer
+-   PHP \>= 8.2 with `pdo_pgsql` and `openssl` extensions enabled
+-   Composer
+-   Node.js \>= 18.x and npm
+-   A running PostgreSQL server
 
-package.json: Frontend runtime and build dependencies
+### 1. Configure the Backend
 
-.gitignore: Excludes build artifacts, local dependencies, and environment keys
-
-🛠️ Tech Stack
-Backend
-Language: PHP 8.3
-
-Framework: Laravel 11.x
-
-Database: PostgreSQL (pgsql) managed via Eloquent ORM
-
-Authentication: Laravel Sanctum (session cookies/tokens with CORS enabled)
-
-Security: Bcrypt password hashing (Hash::make) and granular access control
-
-Frontend
-Library: React 18 (bundled with Vite)
-
-Routing: React Router DOM (Dual-Sidebar architecture: Club vs. Locker Room)
-
-Data Visualization: Recharts
-
-Document Generation: jsPDF & html2canvas
-
-Styling: Modular CSS3 with native SVG assets
-
-⚙️ Local Setup & Installation
-Prerequisites
-PHP >= 8.2 with pdo_pgsql and openssl extensions enabled
-
-Composer
-
-Node.js >= 18.x and npm
-
-Running PostgreSQL instance
-
-Step 1: Configure Backend
 Navigate to the backend directory:
 
-Bash
+``` bash
 cd backend
+```
+
 Install PHP dependencies:
 
-Bash
+``` bash
 composer install
-Create the local environment file:
+```
 
-Bash
+Create the environment configuration file:
+
+``` bash
 cp .env.example .env
 php artisan key:generate
-Configure PostgreSQL credentials inside .env:
+```
 
+Configure your PostgreSQL credentials in the `.env` file:
 
+``` dotenv
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
 DB_DATABASE=js20app
 DB_USERNAME=postgres
 DB_PASSWORD=your_password_here
-Run database migrations and seed baseline records:
+```
 
-Bash
+Run the database migrations and seed the initial data:
+
+``` bash
 php artisan migrate --seed
-Start the local development server:
+```
 
-Bash
+Start the local API development server:
+
+``` bash
 php -S 127.0.0.1:8000 -t public
-Step 2: Configure Frontend
-Open a new terminal and navigate to the frontend directory:
+```
 
-Bash
+### 2. Configure the Frontend
+
+In a separate terminal, navigate to the frontend directory:
+
+``` bash
 cd frontend
-Install Node dependencies:
+```
 
-Bash
+Install the dependencies:
+
+``` bash
 npm install
+```
+
 Start the Vite development server:
 
-Bash
+``` bash
 npm run dev
-Open the local URL displayed in the terminal (typically http://localhost:5173).
+```
 
-🧹 Database Maintenance Commands
-Truncate table records while preserving schema integrity:
+Open the local URL displayed in the terminal (usually
+`http://localhost:5173`).
 
-Bash
+------------------------------------------------------------------------
+
+## 🧹 Database Maintenance
+
+Clear table records while preserving the database structure:
+
+``` bash
 php artisan db:wipe-data
-Full reset (recreate tables and execute seeders):
+```
 
-Bash
+Perform a full reset by recreating the tables and running the seeders:
+
+``` bash
 php artisan migrate:fresh --seed
-👤 Author
-João Silva — @joaosilva05pt
+```
 
-Project developed as a TFC.
+------------------------------------------------------------------------
+
+## 👤 Author
+
+**João Silva** --- [@joaosilva05pt](https://github.com/joaosilva05pt)
+
+Project developed as part of a Final Course Project (TFC).
+
 
 
 
